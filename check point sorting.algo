@@ -1,0 +1,27 @@
+ prosedure selection_sort (var tab : ARRAY of INTEGER)
+
+             var
+
+             i,j,min_index,passage:INTEGER
+
+             begin  
+
+             REPEAT
+                  passage:=1
+                  permutation:=false
+                
+             FOR i FROM i=0 TO n-2 STEP 1  DO
+                min_index=i
+                FOR j FROM j=i+1 TO n-1 STEP 1  DO
+                    IF(tab[j]<tab[min_index])THEN
+                        min_index=j
+                    END_IF
+                END_FOR
+             END_FOR
+             
+                 temp=tab[i]
+                 tab[i]=tab[min_index]
+                 tab[min_index]=temp
+                 passage:=passage+1
+
+             UNTIL (permutation=false)
