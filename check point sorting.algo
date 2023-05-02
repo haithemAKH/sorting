@@ -3,9 +3,7 @@ VAR
     permutation : BOOLEAN;
     i : INTEGER;
     temp : INTEGER;
-    passage : INTEGER;
 BEGIN
-    passage := 1
     REPEAT
         permutation := false;
         for i := 0 to arr.length-1 do
@@ -13,12 +11,14 @@ BEGIN
            if
            (arr[i] > arr[i+1]) THEN
            begin
-              temp := tableau[i];
-              tableau[i]:= tableau[i+1];
-              tableau[i+1] := tableau[temp];
+              temp := arr [i];
+              arr [i]:= arr [i+1];
+              arr [i+1] := arr [temp];
               permutation := true;
            END;
         END;
-        passage := passage+1;
     UNTIL (permutation = false);
 END;
+
+
+
