@@ -1,27 +1,24 @@
- prosedure selection_sort (var tab : ARRAY of INTEGER)
-
-             var
-
-             i,j,min_index,passage:INTEGER
-
-             begin  
-
-             REPEAT
-                  passage:=1
-                  permutation:=false
-                
-             FOR i FROM i=0 TO n-2 STEP 1  DO
-                min_index=i
-                FOR j FROM j=i+1 TO n-1 STEP 1  DO
-                    IF(tab[j]<tab[min_index])THEN
-                        min_index=j
-                    END_IF
-                END_FOR
-             END_FOR
-             
-                 temp=tab[i]
-                 tab[i]=tab[min_index]
-                 tab[min_index]=temp
-                 passage:=passage+1
-
-             UNTIL (permutation=false)
+PROCEDURE insertion_sort (var arr : ARRAY_of INTEGER)
+VAR
+    permutation : BOOLEAN;
+    i : INTEGER;
+    temp : INTEGER;
+    passage : INTEGER;
+BEGIN
+    passage := 1
+    REPEAT
+        permutation := false;
+        for i := 0 to arr.length-1 do
+        begin
+           if
+           (arr[i] > arr[i+1]) THEN
+           begin
+              temp := tableau[i];
+              tableau[i]:= tableau[i+1];
+              tableau[i+1] := tableau[temp];
+              permutation := true;
+           END;
+        END;
+        passage := passage+1;
+    UNTIL (permutation = false);
+END;
